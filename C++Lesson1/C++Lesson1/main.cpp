@@ -17,6 +17,10 @@ int* CreateArray(int size);
 void DeleteArray(int* parr);
 void FullArrayByNumbers(int* parr, int size);
 int TheSizeOfNewArray(int* parr, int size);
+int* Input();
+
+void SecondLesson();
+void SecondHomework();
 
 
 const int n = 10;
@@ -90,6 +94,12 @@ void SecondLesson() {
 	DeleteArray(newPArray);
 
 	_getch();
+}
+
+void SecondHomework() {
+
+	int* input = Input();
+
 }
 
 
@@ -191,7 +201,7 @@ void DeleteArray(int* parr) {
 
 	delete parr;
 
-	parr = NULL; // занулити вказівник, тобто більше не вказує на масив
+	//parr = NULL; // занулити вказівник, тобто більше не вказує на масив
 }
 
 int TheSizeOfNewArray(int* parr, int size) {
@@ -207,5 +217,52 @@ int TheSizeOfNewArray(int* parr, int size) {
 			count++;
 
 	return count;
+}
+
+int* Input() {
+
+	string* newSymbols;
+	string* symbols;
+	int symbol;
+	bool Enter;
+	int count = 0;
+
+	cout << "Enter text :" << endl;
+
+	do {
+		symbol = _getch();
+		
+		if(symbol == 13)
+			Enter = true;
+
+		else {
+
+			if(count == 0) {
+				symbols = CreateArray(1)
+				*symbols = symbol;
+				count = 1;
+				Enter = false;
+			}
+
+			else {
+				newSymbols = CrateArray(count + 1);
+
+				for(int i = 0; i < count; i ++)
+					*(newSymbols + i) = *(symbols + i);
+
+				*(newSymbols + count) = symbol;
+			
+				symbols = newSymbols;
+				count++;
+				Enter = false;
+
+				newSymbols = NULL;
+				DeleteArray(newSymbols);
+			}
+		}
+
+	} while(Enter == false);
+
+	return symbols;
 }
 

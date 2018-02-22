@@ -1,26 +1,19 @@
-﻿Build started 23.02.2018 0:12:57.
+﻿Build started 23.02.2018 1:25:55.
      1>Project "C:\Users\GlebentiY\Documents\GitHub\CppStudyingZadorozhnyiGS\C++Lesson1\C++Lesson1\C++Lesson1.vcxproj" on node 2 (build target(s)).
      1>InitializeBuildStatus:
          Touching "Debug\C++Lesson1.unsuccessfulbuild".
        ClCompile:
          C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _CONSOLE /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc100.pdb" /Gd /TP /analyze- /errorReport:prompt main.cpp
          main.cpp
-       ManifestResourceCompile:
-         All outputs are up-to-date.
-       Link:
-         C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\GlebentiY\Documents\GitHub\CppStudyingZadorozhnyiGS\C++Lesson1\Debug\C++Lesson1.exe" /INCREMENTAL /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /ManifestFile:"Debug\C++Lesson1.exe.intermediate.manifest" /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /DEBUG /PDB:"C:\Users\GlebentiY\Documents\GitHub\CppStudyingZadorozhnyiGS\C++Lesson1\Debug\C++Lesson1.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Users\GlebentiY\Documents\GitHub\CppStudyingZadorozhnyiGS\C++Lesson1\Debug\C++Lesson1.lib" /MACHINE:X86 Debug\C++Lesson1.exe.embed.manifest.res
-         Debug\main.obj
-       Manifest:
-         C:\Program Files (x86)\Microsoft SDKs\Windows\v7.0A\bin\mt.exe /nologo /verbose /out:"Debug\C++Lesson1.exe.embed.manifest" /manifest Debug\C++Lesson1.exe.intermediate.manifest
-         All outputs are up-to-date.
-       LinkEmbedManifest:
-         All outputs are up-to-date.
-         C++Lesson1.vcxproj -> C:\Users\GlebentiY\Documents\GitHub\CppStudyingZadorozhnyiGS\C++Lesson1\Debug\C++Lesson1.exe
-       FinalizeBuildStatus:
-         Deleting file "Debug\C++Lesson1.unsuccessfulbuild".
-         Touching "Debug\C++Lesson1.lastbuildstate".
-     1>Done Building Project "C:\Users\GlebentiY\Documents\GitHub\CppStudyingZadorozhnyiGS\C++Lesson1\C++Lesson1\C++Lesson1.vcxproj" (build target(s)).
+     1>c:\users\glebentiy\documents\github\cppstudyingzadorozhnyigs\c++lesson1\c++lesson1\main.cpp(242): error C2296: '*' : illegal, left operand has type 'int *'
+     1>c:\users\glebentiy\documents\github\cppstudyingzadorozhnyigs\c++lesson1\c++lesson1\main.cpp(242): error C2297: '*' : illegal, right operand has type 'std::string *'
+     1>c:\users\glebentiy\documents\github\cppstudyingzadorozhnyigs\c++lesson1\c++lesson1\main.cpp(248): error C3861: 'CrateArray': identifier not found
+     1>c:\users\glebentiy\documents\github\cppstudyingzadorozhnyigs\c++lesson1\c++lesson1\main.cpp(260): error C2664: 'DeleteArray' : cannot convert parameter 1 from 'std::string *' to 'int *'
+                 Types pointed to are unrelated; conversion requires reinterpret_cast, C-style cast or function-style cast
+     1>c:\users\glebentiy\documents\github\cppstudyingzadorozhnyigs\c++lesson1\c++lesson1\main.cpp(266): error C2440: 'return' : cannot convert from 'std::string *' to 'int *'
+                 Types pointed to are unrelated; conversion requires reinterpret_cast, C-style cast or function-style cast
+     1>Done Building Project "C:\Users\GlebentiY\Documents\GitHub\CppStudyingZadorozhnyiGS\C++Lesson1\C++Lesson1\C++Lesson1.vcxproj" (build target(s)) -- FAILED.
 
-Build succeeded.
+Build FAILED.
 
-Time Elapsed 00:00:01.33
+Time Elapsed 00:00:00.37
