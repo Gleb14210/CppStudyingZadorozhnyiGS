@@ -1,1 +1,1 @@
-# My_repository
+First and Second Homeworks in C++Lesson1
