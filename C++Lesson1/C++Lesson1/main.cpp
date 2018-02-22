@@ -10,16 +10,24 @@ void LenghtSort();
 void MaxAndMinLength();
 void NumberOfSpecificName();
 
-const int n = 10;
-string names[n] = {"Olga", "GLeb", "Ruslan", "Eugyn", "Fil", "Oleg", "Olga", "Sergio", "Olga", "Ruslan"};
-
+void FirstLesson();
+void FirstHomework();
 
 int* CreateArray(int size);
 void DeleteArray(int* parr);
+void FullArrayByNumbers(int* parr, int size);
+int TheSizeOfNewArray(int* parr, int size);
 
-void main() {
 
-	/*cout << "Hello";
+const int n = 10;
+string names[n] = {"Olga", "GLeb", "Ruslan", "Eugyn", "Fil", "Oleg", "Olga", "Sergio", "Olga", "Ruslan"};
+
+void main() {}
+
+
+void FirstLesson() {
+
+	cout << "Hello";
 	cout << endl;
 	cout << 2018;
 
@@ -31,39 +39,87 @@ void main() {
 
 	cout << "Enter name: ";
 	cin >> name;
-	cout << name << endl;*/
+	cout << name << endl;
 
-	//string nameUser;
+	string nameUser;
 
-	//cout << "Enter your Name: ";
-	//cin >> nameUser;
+	cout << "Enter your Name: ";
+	cin >> nameUser;
 
-	//cout << nameUser + " is studying in KPI" << endl;
+	cout << nameUser + " is studying in KPI" << endl;
 
-	//_getch();
+	_getch();
 
-	//string name;
-	//getline(cin, name);
-	
+	string name1;
+	getline(cin, name1);
+}
+
+void FirstHomework() {
+
+	// Сортування по алфавіту
 	Sort();
 	Show();
 	cout << endl;
 
+	// Сортування по довжині слова
 	LenghtSort();
 	Show();
 	cout << endl;
 
+	// Знаходження слова з мінімальною та максимально з довжиною
 	MaxAndMinLength();
 	cout << endl;
 
+	// Знаходження кількості слів, заданого користувачем
 	NumberOfSpecificName();
 	cout << endl;
 
-	int* pArray = CreateArray(5);// функція буде рахувати 5 , потім виділить таку память
+}
 
+void SecondLesson() {
+
+	const int size = 5;
+
+	int* pArray = CreateArray(size);
+
+	FullArrayByNumbers(pArray, size);
+	int newSize = TheSizeOfNewArray(pArray, size);
 	DeleteArray(pArray);
 
+	int* newPArray = CreateArray(newSize);
+	DeleteArray(newPArray);
+
 	_getch();
+}
+
+
+
+// Функції першого заняття та першого Д/З
+
+void MaxAndMinLength() {
+
+	LenghtSort();
+
+	cout << names[0] << endl;
+	cout << names[n - 1] << endl;
+
+}
+
+void NumberOfSpecificName() {
+
+	int count = 0;
+	string userName;
+	
+	cout << "Enter name that you want to count : ";
+	cin >> userName;
+
+	for(int i = 0; i < n; i++) {
+
+		if(names[i] == userName)
+			count++;
+	}
+
+	cout << count;
 
 }
 
@@ -110,53 +166,26 @@ void LenghtSort() {
 	}
 }
 
-void MaxAndMinLength() {
 
-	LenghtSort();
-
-	cout << names[0] << endl;
-	cout << names[n - 1] << endl;
-
-}
-
-void NumberOfSpecificName() {
-
-	int count = 0;
-	string userName;
-	
-	cout << "Enter name that you want to count : ";
-	cin >> userName;
-
-	for(int i = 0; i < n; i++) {
-
-		if(names[i] == userName)
-			count++;
-	}
-
-	cout << count;
-
-}
-
-
-
-
-
+// Функції другого заняття та другого Д/З
 
 int* CreateArray(int size) {
 
-	 int* pArr = new int[size];
-		///////////////////////////////////////////////////////  *(pArr + i) = '\0';   //   pArr[i] = 0;		
+	int* parr = new int[size];	
 
-	 for(int i = 0; i < size; i++) {
+	for(int i = 0; i < size; i++) 
+		*(parr + i) = '\0'; // pArr[i] = 0;
 
-		 cout << "Input number: " + (i + 1);
-		 cin >> *pArr + i;
-	 }
-
-	 return pArr;
+	return parr;
 }
 
-void CopyArray() {}
+void FullArrayByNumbers(int* parr, int size) {
+
+	for(int i = 0; i < size; i++) {
+		cout << "Enter array value: ";
+		cin >> *(parr + i);
+	}
+}
 
 void DeleteArray(int* parr) {
 
@@ -164,3 +193,19 @@ void DeleteArray(int* parr) {
 
 	parr = NULL; // занулити вказівник, тобто більше не вказує на масив
 }
+
+int TheSizeOfNewArray(int* parr, int size) {
+
+	int number = 0;
+	int count = 0;
+
+	cout << "Enter the number that will be the size of new array: ";
+	cin >> number;
+
+	for(int i = 0; i < size; i++)
+		if(*(parr + i) == number)
+			count++;
+
+	return count;
+}
+
