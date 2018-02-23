@@ -1,6 +1,7 @@
 #include <string>
 #include <iostream>
 #include <conio.h>
+#include <algorithm>
 
 using namespace std;
 
@@ -26,7 +27,10 @@ void SecondHomework();
 const int n = 10;
 string names[n] = {"Olga", "GLeb", "Ruslan", "Eugyn", "Fil", "Oleg", "Olga", "Sergio", "Olga", "Ruslan"};
 
-void main() {}
+void main() {
+
+	SecondHomework();
+}
 
 
 void FirstLesson() {
@@ -99,7 +103,6 @@ void SecondLesson() {
 void SecondHomework() {
 
 	int* input = Input();
-
 }
 
 
@@ -221,13 +224,13 @@ int TheSizeOfNewArray(int* parr, int size) {
 
 int* Input() {
 
-	string* newSymbols;
-	string* symbols;
+	int* newSymbols;
+	int* symbols;
 	int symbol;
 	bool Enter;
 	int count = 0;
 
-	cout << "Enter text :" << endl;
+	cout << "Enter text : " << endl;
 
 	do {
 		symbol = _getch();
@@ -237,31 +240,41 @@ int* Input() {
 
 		else {
 
+			cout << char(symbol);
+
 			if(count == 0) {
-				symbols = CreateArray(1)
-				*symbols = symbol;
+				symbols = CreateArray(1);
+				symbols[0] = symbol;
 				count = 1;
 				Enter = false;
 			}
 
 			else {
-				newSymbols = CrateArray(count + 1);
+				newSymbols = CreateArray(count + 1);
 
 				for(int i = 0; i < count; i ++)
-					*(newSymbols + i) = *(symbols + i);
+					newSymbols[i] = symbols[i];
 
 				*(newSymbols + count) = symbol;
-			
+
+				DeleteArray(symbols);
+				symbols = NULL;
+
 				symbols = newSymbols;
 				count++;
 				Enter = false;
-
-				newSymbols = NULL;
-				DeleteArray(newSymbols);
 			}
 		}
 
 	} while(Enter == false);
+
+	cout << endl;
+
+	for(int i = 0; i < count; i++)
+		cout << char(symbols[i]);
+
+	_getch();
+
 
 	return symbols;
 }
